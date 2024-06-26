@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./home.module.scss";
+import Link from "next/link";
 
 type Props = {};
 
@@ -10,13 +11,21 @@ function AuthNav({}: Props) {
     <div className={styles.actionCenter}>
       {!isAuthenticated ? (
         <>
-          <h3>Login</h3>
-          <h3>Join Us</h3>
+          <h3>
+            <Link href="/?modal=true"> Login</Link>
+          </h3>
+          <Link href="/?modal=true">
+            <h3> Join Us</h3>
+          </Link>
         </>
       ) : (
         <>
-          <h3>My Profile</h3>
-          <h3>Upload +</h3>
+          <Link href="/?modal=true">
+            <h3>My Profile</h3>
+          </Link>
+          <Link href="/?modal=true">
+            <h3>Upload +</h3>
+          </Link>
         </>
       )}
     </div>
