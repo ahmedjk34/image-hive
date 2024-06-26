@@ -6,7 +6,6 @@ import { IoSearch } from "react-icons/io5";
 type Props = {};
 
 function Hero({}: Props) {
-  let isAuthenticated = false; //placeholder
   return (
     <div className={styles.hero}>
       <div className={styles.nav}>
