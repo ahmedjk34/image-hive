@@ -1,0 +1,117 @@
+@use "../variables" as v;
+.dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  overflow: auto;
+  backdrop-filter: blur(7.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .dialogContent {
+    background-color: white;
+    margin: auto;
+    //!TO-DO: add keyframes to make the modal look better on devices between 900 and 500 pixels instead of these min/max widths
+    min-width: 19rem;
+    max-width: 50rem;
+    width: 40vw;
+    height: 50dvh;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 4px 8px 0 v.$primary-color;
+    overflow: hidden;
+    .closeButton {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+    }
+    .toggleButtons {
+      width: 100%;
+      display: flex;
+      gap: 1rem;
+      button {
+        flex: 1;
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: x-large;
+        font-family: v.$secondary-font;
+        padding: 0.5rem;
+        &.active {
+          background-color: v.$accent-color;
+        }
+      }
+    }
+
+    .interface {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      margin-top: 1rem;
+      gap: 0.5rem;
+      label {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        max-width: 600px;
+        input {
+          border: 1px solid black;
+          padding: 0.8rem;
+          font-size: medium;
+          border-radius: 1rem;
+          outline: none;
+          box-shadow: 2px 4px v.$accent-color;
+          transition: all 0.35s ease-out;
+          &:focus {
+            box-shadow: 2px 4px v.$primary-color;
+            background-color: beige;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .authButtons {
+      display: flex;
+      gap: 1rem;
+      font-size: large;
+      .googleButton {
+        font-size: inherit;
+        background-color: transparent;
+        border: 1.5px solid black;
+        border-radius: 1rem;
+        padding: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        box-shadow: 2px 4px v.$primary-color;
+      }
+      //target the second button (regular login / sign-up)
+      button:nth-child(2) {
+        font-size: inherit;
+        background-color: v.$accent-color;
+        border: none;
+        border-radius: 1rem;
+        padding: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        box-shadow: 2px 4px v.$primary-color;
+        color: white;
+      }
+    }
+    //An effect for all buttons
+    button {
+      transition: opacity 0.25s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+    }
+  }
+}
