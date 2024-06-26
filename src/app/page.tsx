@@ -1,5 +1,6 @@
 import AuthModal from "@/components/AuthModal/AuthModal";
 import Hero from "@/components/home/Hero";
+import Link from "next/link";
 
 import React from "react";
 
@@ -9,6 +10,8 @@ function page({}: Props) {
   return (
     <>
       <Hero />
+
+      <AuthModal />
     </>
   );
 }
