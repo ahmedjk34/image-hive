@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./home.module.scss";
 import Link from "next/link";
+import { auth } from "@/auth";
 
 type Props = {};
 
-function AuthNav({}: Props) {
-  let isAuthenticated = false; //placeholder
-
+async function AuthNav({}: Props) {
+  const session = await auth();
   return (
     <div className={styles.actionCenter}>
-      {!isAuthenticated ? (
+      {!session ? (
         <>
           <h3>
             <Link href="/?modal=true"> Login</Link>

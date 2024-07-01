@@ -19,7 +19,7 @@
     min-width: 19rem;
     max-width: 50rem;
     width: 40vw;
-    height: 50dvh;
+    height: 60dvh;
     position: relative;
     border-radius: 1rem;
     box-shadow: 4px 8px 0 v.$primary-color;
@@ -53,8 +53,8 @@
       flex-direction: column;
       width: 100%;
       align-items: center;
-      margin-top: 1rem;
-      gap: 0.5rem;
+      margin-top: 10%;
+      gap: 1rem;
       label {
         display: flex;
         flex-direction: column;

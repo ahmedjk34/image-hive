@@ -6,6 +6,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoLogoGoogle } from "react-icons/io5";
+import { signIn } from "next-auth/react";
+import { login, register } from "@/actions/user";
 
 type Props = {};
 
@@ -38,7 +40,7 @@ function AuthModal({}: Props) {
               </button>
             </div>
             {isSignup ? (
-              <div className={styles.interface}>
+              <form className={styles.interface} action={register}>
                 <label>
                   Name:
                   <input
@@ -69,9 +71,9 @@ function AuthModal({}: Props) {
                   </button>
                   <button>Signup</button>
                 </div>
-              </div>
+              </form>
             ) : (
-              <div className={styles.interface}>
+              <form className={styles.interface} action={login}>
                 <label>
                   Email:
                   <input
@@ -94,7 +96,7 @@ function AuthModal({}: Props) {
                   </button>
                   <button>Login</button>
                 </div>
-              </div>
+              </form>
             )}
           </div>
         </dialog>
