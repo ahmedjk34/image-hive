@@ -7,11 +7,19 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 20,
   },
+  email: {
+    type: String,
+    required: true,
+  },
   password: {
     type: String,
     required: true,
-    minlength: 5,
-    maxlength: 20,
+  },
+  profile_picture: {
+    type: String,
+    required: true,
+    default:
+      "https://st2.depositphotos.com/5682790/10456/v/450/depositphotos_104564156-stock-illustration-male-user-icon.jpg",
   },
   images: {
     type: [String],
