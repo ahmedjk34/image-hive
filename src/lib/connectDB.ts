@@ -6,12 +6,16 @@ console.log(connectingURL);
 const connection: { isConnected?: number } = {};
 
 async function connectDB() {
-  if (connection.isConnected) {
-    return;
-  }
+  try {
+    if (connection.isConnected) {
+      return;
+    }
 
-  const db = await mongoose.connect(connectingURL!);
-  connection.isConnected = db.connections[0].readyState;
+    const db = await mongoose.connect(connectingURL!);
+    connection.isConnected = db.connections[0].readyState;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export default connectDB;
