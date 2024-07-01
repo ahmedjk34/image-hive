@@ -1,3 +1,4 @@
+"use server";
 import React from "react";
 import styles from "./home.module.scss";
 import AuthNav from "./AuthNav";
