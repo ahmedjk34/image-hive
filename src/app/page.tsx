@@ -9,14 +9,10 @@ import React from "react";
 type Props = {};
 
 async function page({}: Props) {
-  const session = await auth();
-
   return (
     <>
-      <SessionProvider session={session}>
-        <Hero />
-        <AuthModal />
-      </SessionProvider>
+      <Hero />
+      <AuthModal />
     </>
   );
 }
