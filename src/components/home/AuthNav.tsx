@@ -2,11 +2,13 @@ import React from "react";
 import styles from "./home.module.scss";
 import Link from "next/link";
 import { auth } from "@/auth";
+import { UserType } from "@/util/Types";
 
 type Props = {};
 
 async function AuthNav({}: Props) {
   const session = await auth();
+  const user = session?.user as UserType;
   return (
     <div className={styles.actionCenter}>
       {!session ? (
@@ -20,10 +22,10 @@ async function AuthNav({}: Props) {
         </>
       ) : (
         <>
-          <Link href="/?modal=true">
+          <Link href={`/profile/${user.id}`}>
             <h3>My Profile</h3>
           </Link>
-          <Link href="/?modal=true">
+          <Link href="/upload">
             <h3>Upload +</h3>
           </Link>
         </>
