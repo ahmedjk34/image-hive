@@ -1,0 +1,28 @@
+@use "../variables" as v;
+.footer {
+  background-color: v.$accent-color;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .copy {
+    font-size: 0.875em;
+    margin: 5px 0;
+  }
+
+  .madeBy {
+    font-size: 0.875em;
+    margin: 5px 0;
+  }
+}
