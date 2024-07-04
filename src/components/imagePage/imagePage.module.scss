@@ -1,0 +1,63 @@
+@use "../variables" as v;
+
+.imagePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100dvh - 5rem);
+  padding: 1rem;
+  .imageContainer {
+    //for the description to display properly
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    display: grid;
+    grid-template: 1fr / auto 1fr;
+    box-shadow: 2px 4px 0 v.$primary-color;
+    border-radius: 2rem;
+    max-width: 80dvw;
+    max-height: 90dvh;
+    & > img {
+      object-fit: fill;
+      max-width: 50dvw;
+    }
+    .imageInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: white;
+      max-height: 90dvh;
+
+      .title {
+      }
+      .description {
+        margin-bottom: auto;
+      }
+      & > div {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .authorInfo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1.25rem;
+          }
+          h4 {
+            span {
+              opacity: 0.5;
+            }
+          }
+        }
+        h4 {
+        }
+      }
+    }
+  }
+}
