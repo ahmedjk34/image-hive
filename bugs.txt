@@ -2,3 +2,5 @@
 * You need to add a proper nav bar to every page
 * The image page isn't really optimized for different sizes
 * You should add loading too
+* also check after signup if it signs in
+* when clicking on the user in image modal , it should redirect to use page
