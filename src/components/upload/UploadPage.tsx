@@ -24,7 +24,7 @@ function UploadPage({ session }: Props) {
       const formData = new FormData();
       formData.append("image", image);
       const res = await axios.post(
-        "http://localhost:3000/api/upload",
+        "http://localhost:3000/api/image",
         formData,
         {
           params: {
