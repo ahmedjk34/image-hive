@@ -1,0 +1,13 @@
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 0;
+  img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+  }
+}

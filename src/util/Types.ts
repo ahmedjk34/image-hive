@@ -5,7 +5,7 @@ export interface UserType {
   profile_picture: string;
   username: string;
   password: string;
-  images: [ObjectId];
+  images: [ImageType];
 }
 
 export interface ImageType {

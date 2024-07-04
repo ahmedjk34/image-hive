@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { UserType } from "../util/Types";
+import Image from "./imageModel";
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -21,11 +22,14 @@ const userSchema = new mongoose.Schema({
     default:
       "https://st2.depositphotos.com/5682790/10456/v/450/depositphotos_104564156-stock-illustration-male-user-icon.jpg",
   },
-  images: {
-    type: [mongoose.Types.ObjectId],
-    default: [],
-    required: true,
-  },
+  images: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Image",
+      default: [],
+      required: true,
+    },
+  ],
 });
 
 const User =

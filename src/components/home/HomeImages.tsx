@@ -24,11 +24,12 @@ function HomeImages({}: Props) {
   }, []);
   return (
     <div className={styles.imagesHolder}>
-      {images.map((image, index) => {
+      {images.map((image) => {
         return (
           <div
             className={styles.image}
-            onClick={() => router.push(`image/${image._id}`)}
+            key={"image" + image._id}
+            onClick={() => router.push(`/image/${image._id}`)}
           >
             <img alt={image.title} src={image.image_Url}></img>
             <h2>{image.title}</h2>
