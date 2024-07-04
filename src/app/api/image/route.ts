@@ -1,10 +1,10 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
 import Image from "@/models/imageModel";
 import connectDB from "@/lib/connectDB";
+import User from "@/models/userModel";
 
+//uploads an image
 export async function POST(request: NextRequest, response: NextResponse) {
   try {
     const data = await request.formData();
@@ -26,19 +26,35 @@ export async function POST(request: NextRequest, response: NextResponse) {
     ).toLocaleDateString();
 
     await connectDB();
-    await Image.create({
+    const newImage = await Image.create({
       title: params.get("title"),
       description: params.get("description"),
       uploadDate: uploadDate,
       image_Url: uploadedImage.data.data.url,
       uploader: params.get("uploader"),
     });
+    await User.findByIdAndUpdate(params.get("uploader"), {
+      $push: { images: newImage._id },
+    });
     return new NextResponse("Success", {
       status: 200,
     });
-  } catch (e) {
-    console.log(e);
-    return new NextResponse(`$Error Uploading the Image ${e}`, {
+  } catch (error) {
+    console.log(error);
+    return new NextResponse(`$Error Uploading the Image ${error}`, {
+      status: 400,
+    });
+  }
+}
+
+export async function GET(request: NextRequest, response: NextResponse) {
+  try {
+    await connectDB();
+    const images = await Image.find({});
+    return NextResponse.json(images);
+  } catch (error) {
+    console.log(error);
+    return new NextResponse(`$Error Fetching the Images ${error}`, {
       status: 400,
     });
   }
