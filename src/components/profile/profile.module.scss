@@ -1,3 +1,4 @@
+@use "../variables" as v;
 .profileInfo {
   display: flex;
   flex-direction: column;
@@ -8,6 +9,14 @@
   img {
     width: 10rem;
     height: 10rem;
+    border-radius: 1rem;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    background-color: v.$primary-color;
+    box-shadow: 2px 4px v.$secondary-color;
+    padding: 1rem;
     border-radius: 1rem;
   }
 }

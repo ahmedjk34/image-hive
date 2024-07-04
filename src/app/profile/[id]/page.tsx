@@ -16,6 +16,7 @@ async function page({ params: { id } }: Props) {
   return (
     <div>
       <ProfileInfo
+        userId={id}
         profile_picture={user.profile_picture}
         username={user.username}
       />
