@@ -1,0 +1,4 @@
+* You need to add default pages and error handling , like when the form is empty or invalid data , when the request returns an error
+* You need to add a proper nav bar to every page
+* The image page isn't really optimized for different sizes
+* You should add loading too
