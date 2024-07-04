@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./authModal.module.scss";
+import styles from "./modal.module.scss";
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { IoCloseSharp } from "react-icons/io5";
