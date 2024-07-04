@@ -1,8 +1,6 @@
-import { auth } from "@/auth";
 import AuthModal from "@/components/AuthModal/AuthModal";
 import Hero from "@/components/home/Hero";
-import { SessionProvider } from "next-auth/react";
-import Link from "next/link";
+import HomeImages from "@/components/home/HomeImages";
 
 import React from "react";
 
@@ -12,6 +10,7 @@ async function page({}: Props) {
   return (
     <>
       <Hero />
+      <HomeImages />
       <AuthModal />
     </>
   );
