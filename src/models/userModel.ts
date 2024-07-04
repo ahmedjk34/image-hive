@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
       "https://st2.depositphotos.com/5682790/10456/v/450/depositphotos_104564156-stock-illustration-male-user-icon.jpg",
   },
   images: {
-    type: [String],
+    type: [mongoose.Types.ObjectId],
     default: [],
     required: true,
   },
