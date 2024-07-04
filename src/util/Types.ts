@@ -14,5 +14,5 @@ export interface ImageType {
   description: string;
   image_Url: string;
   uploadDate: Date;
-  uploader: ObjectId;
+  uploader: UserType;
 }
