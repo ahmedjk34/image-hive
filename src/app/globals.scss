@@ -9,7 +9,7 @@
 }
 #root {
   display: grid;
-  grid-template: 1fr 5rem / 1fr;
+  grid-template: 1fr fit-content 5rem / 1fr;
   min-height: 100vh;
   background-color: v.$background-color;
   font-family: v.$primary-font;
