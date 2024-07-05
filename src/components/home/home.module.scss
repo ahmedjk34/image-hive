@@ -1,8 +1,9 @@
 @use "../variables" as v;
 .hero {
   display: grid;
-  background-image: url(https://cdn.pixabay.com/index/2024/06/20/05-15-59-961_1920x550.jpg);
-  background-size: cover;
+  background-image: url("/bg.webp");
+  background-size: cover; /* This ensures the image covers the entire element */
+  background-position: center; /* This centers the image */
   height: 50vh;
   position: relative;
   color: white;
